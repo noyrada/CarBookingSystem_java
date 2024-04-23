@@ -1,4 +1,10 @@
-import java.nio.file.attribute.UserPrincipal;
+import Car.CarService;
+import user.UserService;
+import user.User;
+import user.UserDao;
+import Car.Car;
+import Car.CarDao;
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -6,6 +12,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         UserService userService = new UserService();
+        CarService carService = new CarService();
 
         boolean keepLooking = true;
 
@@ -17,8 +24,8 @@ public class Main {
                 case 1->System.out.println("1-Booking Car");
                 case 2-> System.out.println("2-View all user booked cars");
                 case 3-> System.out.println("3-view all booking");
-                case 4-> System.out.println("4-view available cars");
-                case 5-> System.out.println("5-view available Electric Cars");
+                case 4-> displayAllCars(carService,false);
+                case 5-> displayAllCars(carService,true);
                 case 6-> displayAllUser(userService);
                 case 7->{
                     System.out.println("7-Exit");
@@ -27,6 +34,20 @@ public class Main {
                 default-> System.out.println("Not found of Option!");
             }
         }
+    }
+
+
+    private static Car[] displayAllCars(CarService carService,boolean isElectric) {
+
+        Car[] cars = isElectric ? carService.getAllElectricCar() : carService.getAllCar();
+        if (cars.length == 0){
+            System.out.println("❌ No car in the System!");
+            return null;
+        }
+        for (Car car:cars){
+            System.out.println(car);
+        }
+        return cars;
     }
 
     //case 6:

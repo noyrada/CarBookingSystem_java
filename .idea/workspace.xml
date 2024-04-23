@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78479c20-d9f5-439f-abd7-290f4a2320f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarBookingSystem.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Car/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Car/CarDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Car/CarService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Details project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BookingCar/CarBooking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BookingCar/CarBookingDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BookingCar/CarBookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +43,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "D:/Y3-E2-G25/JAVA/without Study/CarBookingSystem/src/Main.java"
@@ -69,5 +59,16 @@
       <updated>1713760537704</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

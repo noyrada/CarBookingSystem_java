@@ -1,9 +1,9 @@
+import BookingCar.CarBookingService;
 import Car.CarService;
 import user.UserService;
 import user.User;
-import user.UserDao;
 import Car.Car;
-import Car.CarDao;
+import BookingCar.CarBooking;
 
 import java.util.Scanner;
 public class Main {
@@ -13,6 +13,7 @@ public class Main {
 
         UserService userService = new UserService();
         CarService carService = new CarService();
+        CarBookingService carBookingService= new CarBookingService();
 
         boolean keepLooking = true;
 
@@ -22,8 +23,8 @@ public class Main {
             switch (optionNumber){
 
                 case 1->System.out.println("1-Booking Car");
-                case 2-> System.out.println("2-View all user booked cars");
-                case 3-> System.out.println("3-view all booking");
+                case 2-> displayAllUserBookingCar(userService, carBookingService,scanner);
+                case 3-> displayAllBooking(carBookingService);
                 case 4-> displayAllCars(carService,false);
                 case 5-> displayAllCars(carService,true);
                 case 6-> displayAllUser(userService);
@@ -34,6 +35,25 @@ public class Main {
                 default-> System.out.println("Not found of Option!");
             }
         }
+    }
+
+    private static void displayAllUserBookingCar(UserService userService, CarBookingService carBookingService, Scanner scanner) {
+
+
+    }
+
+    private static CarBooking[] displayAllBooking(CarBookingService carBookingService) {
+
+        CarBooking[] carBookings = carBookingService.getAllCarBookings();
+        if (carBookings.length == 0){
+            System.out.println("❌ No Car booking in the system!");
+            return null;
+        }
+        for (CarBooking carBooking: carBookings){
+            if (carBooking != null)
+                System.out.println(carBooking);
+        }
+        return carBookings;
     }
 
 

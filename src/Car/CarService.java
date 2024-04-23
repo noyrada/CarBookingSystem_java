@@ -21,7 +21,7 @@ public class CarService {
         for (int i=0;i<cars.length;i++){
             if (cars[i].isElectric()){
                 electricCars[index] = cars[i];
-                index++;
+                //index++;
             }
         }
         return electricCars;

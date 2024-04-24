@@ -40,33 +40,40 @@ public class Main {
     }
 
     private static void bookCar(UserService userService, CarBookingService carBookingService, CarService carService, Scanner scanner) {
-        displayAllCars(carService,false);
-        System.out.println("-> Select car register number: " );
-        scanner.nextLine();
-        String registerNumber = scanner.nextLine();
+        try {
+            displayAllCars(carService,false);
+            System.out.println("-> Select car register number: " );
+            scanner.nextLine();
+            String registerNumber = scanner.nextLine();
 
-        Car car  = carService.getCar(registerNumber);
-        if(car == null){
-            System.out.println("❌ No Car found with register"+ registerNumber);
-            return;
+            Car car  = carService.getCar(registerNumber);
+            if(car == null){
+                System.out.println("❌ No Car found with register"+ registerNumber);
+                return;
+            }
+
+            displayAllUser(userService);
+            System.out.println("-> select user id : ");
+            String userId = scanner.nextLine();
+
+            User user = userService.getUserById(UUID.fromString(userId));
+            if (user == null){
+                System.out.println("❌ No user found with id" + userId);
+                return;
+            }
+
+            //implementation of carBooking action:
+            CarBooking carBooking = carBookingService.bookCar(user,car);
+            System.out.println("Successfully booked car with number "
+                    +car.getRegisterNumber()+ "for user"
+                    + user.getId().toString()+"Booking ref:"
+                    +carBooking.getBookingId().toString());
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
         }
 
-        displayAllUser(userService);
-        System.out.println("-> select user id : ");
-//        scanner.nextLine();
-        String userId = scanner.nextLine();
-
-        User user = userService.getUserById(UUID.fromString(userId));
-        if (user == null){
-            System.out.println("❌ No user found with id" + userId);
-            return;
-        }
-
-
-
-        //implementation of carBooking:
-        System.out.println(user);
-        System.out.println(car);
     }
 
     private static void displayAllUserBookingCar(UserService userService, CarBookingService carBookingService, Scanner scanner) {
@@ -75,19 +82,16 @@ public class Main {
         System.out.print("->Select user id:");
         scanner.nextLine();
         String userId = scanner.nextLine();
-
         User user = userService.getUserById(UUID.fromString(userId));
         if (user  == null){
             System.out.println("❌ No user found!");
             return;
         }
-
         Car[] userBookedCars = carBookingService.getUserBookedCars(user.getId());
         if (userBookedCars == null){
             System.out.println("❌ User " + user+ "has no cars booked");
             return;
         }
-
         for (Car car: userBookedCars){
             System.out.println(car);
         }

@@ -15,7 +15,7 @@ public class CarBookingService {
         return  null;
     }
 
-    public void bookCar(User user,Car car){
-
+    public CarBooking bookCar(User user,Car car){
+        return CarBookingDao.book(user,car);
     }
 }

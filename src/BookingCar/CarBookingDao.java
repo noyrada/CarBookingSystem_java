@@ -43,6 +43,5 @@ public class CarBookingDao {
             carBookings = biggerCarBookings;
             setCarBookings(biggerCarBookings);
             return carBooking;
-
     }
 }
